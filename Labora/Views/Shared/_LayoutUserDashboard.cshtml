@@ -12,6 +12,7 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
     <script src="~/Scripts/js-cookie/js.cookie.js"></script>
+    <script src="~/ScriptsApp/UserDashboard.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,15 +20,15 @@
             <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder">
                 L A B
                 <img src="~/Resources/ImagesApp/Logo.png" style="height:30px" />
-                R A
-            </a>
+                R A 
+            </a> Panel Usuario
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Home/Home">Inicio</a>
+                        <a class="nav-link" aria-current="page" href="/UserDashboard/Home">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Home/Contact">Contacto</a>
@@ -37,10 +38,9 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cuenta</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/Account/Login">Ingresar</a></li>
-                            <li><a class="dropdown-item" href="/Account/Register">Registrarse</a></li>
+                            <li><a class="dropdown-item" href="/Account/ChangePassword">Cambiar Contraseña</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/Account/RecoverPassword">Recuperar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="javascript:Loguot()">Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -59,3 +59,8 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        SearchCookie();
+    });
+</script>

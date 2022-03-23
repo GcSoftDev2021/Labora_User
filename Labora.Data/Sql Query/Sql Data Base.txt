@@ -1,4 +1,7 @@
-﻿CREATE TABLE Country 
+﻿update-package Microsoft.CodeDom.Providers.DotNetCompilerPlatform  -> Corregir error de ruta.
+
+
+CREATE TABLE Country 
 (Id int identity(1,1) Primary key ,
 Name varchar(255),
 Active int default 1,
@@ -51,6 +54,44 @@ BEGIN
 		BEGIN
 			INSERT INTO Users(Email,UserKey,Password,DateCreate)VALUES(LOWER(@Email),@UserKey,@PasswordMD5,GETDATE())
 			SET @Result = 'OK__Su registro fue Existoso'
+		END
+	SELECT @Result
+END
+
+go
+
+CREATE PROCEDURE [dbo].[SP_UserLogin] @Email varchar(255), @Password varchar(255), @Result varchar(max) OUTPUT
+AS
+BEGIN
+DECLARE @ExistUser INT, @ValidPassword varchar(255), @PasswordMd5 varchar(255), @UserMd5 varchar(255), @Active Int
+
+		SELECT @UserMd5 = CONVERT ( VARCHAR (32), HashBytes ( 'MD5' ,  @Email ), 2)
+		SELECT @PasswordMd5 = CONVERT ( VARCHAR (32), HashBytes ( 'MD5' ,  @Password ), 2)
+		SELECT @ExistUser = COUNT(1) FROM Users Where UserKey = @UserMd5
+		SELECT @ValidPassword = Password  FROM Users WHERE UserKey = @UserMd5
+		Select @Active = Active FROM Users WHERE UserKey = @UserMd5
+			
+	IF @ExistUser = 0
+		BEGIN
+			SET @Result = 'Error__El Email ingresado no Existe'
+		END
+	ELSE
+		BEGIN	
+			IF @ValidPassword = @PasswordMd5
+				BEGIN
+					IF @Active = 1
+						BEGIN
+							SET @Result = 'OK__'+@UserMd5
+						END
+					ELSE
+						BEGIN
+							SET @Result = 'Error__El Usuario se encuentra Inactivo, por favor realice una peticion en la Sección Contacto'
+						END
+				END
+			ELSE
+				BEGIN
+					SET @Result = 'Error__Contraseña incorrecta'
+				END
 		END
 	SELECT @Result
 END
