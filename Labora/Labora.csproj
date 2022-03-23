@@ -114,6 +114,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Resources\ImagesApp\Logo.png" />
+    <Content Include="Resources\ImagesUsers\Usuario.png" />
     <Content Include="ScriptsApp\Login.js" />
     <Content Include="ScriptsApp\Register.js" />
     <Content Include="ScriptsApp\UserDashboard.js" />
@@ -223,6 +224,7 @@
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserDashboardController.cs" />
+    <Compile Include="Controllers\UserInformationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,6 +261,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Shared\_LayoutUserDashboard.cshtml" />
+    <Content Include="Views\UserInformation\PersonalInformation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

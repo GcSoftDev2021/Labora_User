@@ -18,14 +18,6 @@ END
 
 go
 
-CREATE TABLE SecurityQuestion 
-(Id int identity(1,1) Primary key ,
-Question varchar(255),
-Active int default 1
-)
-
-go
-
 CREATE TABLE Users 
 (Id int identity(1,1) Primary key ,
 Email varchar(255),
@@ -53,6 +45,7 @@ BEGIN
 	ELSE
 		BEGIN
 			INSERT INTO Users(Email,UserKey,Password,DateCreate)VALUES(LOWER(@Email),@UserKey,@PasswordMD5,GETDATE())
+			INSERT INTO PersonalInformation(IdUser,	Email, UserImage)VALUES(@@IDENTITY, @Email, '/Resources/ImagesUsers/Usuario.png')
 			SET @Result = 'OK__Su registro fue Existoso'
 		END
 	SELECT @Result
@@ -95,3 +88,49 @@ DECLARE @ExistUser INT, @ValidPassword varchar(255), @PasswordMd5 varchar(255), 
 		END
 	SELECT @Result
 END
+
+go
+
+CREATE TABLE DocumentType
+(Id int identity(1,1) Primary key,
+Name varchar(255),
+Activo int default 1,
+unique(Name)
+)
+
+go
+
+CREATE TABLE City
+(Id int identity(1,1) Primary key ,
+IdCountry int,
+Name varchar(255),
+Activo int default 1,
+unique(Name)
+)
+
+
+ALTER TABLE City ADD CONSTRAINT FK_IdCountry FOREIGN KEY (IdCountry) references Country(Id)
+
+go
+
+CREATE TABLE PersonalInformation 
+(Id int identity(1,1) Primary key ,
+IdUser int,
+FirstName varchar(255),
+LastName varchar(255),
+IdDocumentType int,
+IdentificationNumber varchar(255),
+Email varchar(255),
+Phone varchar(255),
+PhoneAdditional varchar(255),
+BirthDate date,
+IdNationality int,
+ResidenceAdress varchar(255),
+IdCity int,
+UserImage varchar(255)
+)
+
+ALTER TABLE PersonalInformation ADD CONSTRAINT FK_UserKey FOREIGN KEY (IdUser) references Users(Id)
+ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdDocumentType FOREIGN KEY (IdDocumentType) references DocumentType(Id)
+ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdNationality FOREIGN KEY (IdNationality) references Country(Id)
+ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdCity FOREIGN KEY (IdCity) references City(Id)
