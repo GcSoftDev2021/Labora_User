@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<script src="~/ScriptsApp/Register.js"></script>
+<h2>Registro</h2>
+
+<div>
+    <table class="table table-borderless">
+        <tr>
+            <td>
+                <span>Correo Electronico</span>
+                <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" autocomplete="off"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Contraseña <i style="font-size:11px;color:red">(8 Caracteres Máximo)</i></span>
+                <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="8" autocomplete="off"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Confirmar Contraseña</span>
+                <input style="min-width:100%" class="form-control" type="password" name="name" id="ConfirmPassword" value="" maxlength="8" autocomplete="off"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-outline-success" onclick="Register()">Registrarse</button>
+            </td>
+        </tr>
+    </table>
+</div>
+

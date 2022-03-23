@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Ingresar</h2>
+<script src="~/ScriptsApp/Login.js"></script>
+<div>
+    <table class="table table-borderless">
+        <tr>
+            <td>
+                <span>Correo Electronico</span>
+                <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Contraseña</span>
+                <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="8" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-outline-success" onclick="Login()">Ingresar</button>
+            </td>
+        </tr>
+    </table>
+</div>

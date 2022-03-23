@@ -1,0 +1,56 @@
+﻿CREATE TABLE Country 
+(Id int identity(1,1) Primary key ,
+Name varchar(255),
+Active int default 1,
+unique(Name)
+)
+
+go
+
+CREATE PROCEDURE [dbo].[SP_ListCountry]
+AS
+BEGIN
+	SELECT Id, Name FROM Country WHERE Active = 1 order by Name Asc
+END
+
+go
+
+CREATE TABLE SecurityQuestion 
+(Id int identity(1,1) Primary key ,
+Question varchar(255),
+Active int default 1
+)
+
+go
+
+CREATE TABLE Users 
+(Id int identity(1,1) Primary key ,
+Email varchar(255),
+UserKey varchar(255),
+Password varchar(255),
+DateCreate datetime,
+Active int default 1,
+unique(Email)
+)
+
+go
+CREATE PROCEDURE [dbo].[SP_Register] @Email varchar(255), @Password varchar(255), 
+@Result varchar(max) OUTPUT
+AS
+BEGIN
+	DECLARE @ExistEmail int, @PasswordMD5 varchar(255), @UserKey varchar(255)
+	SELECT @ExistEmail = COUNT(1) FROM Users WHERE Email = @Email
+	SELECT @PasswordMD5 = CONVERT ( VARCHAR (32), HashBytes ( 'MD5' ,  @Password ), 2)
+	SELECT @UserKey = CONVERT ( VARCHAR (32), HashBytes ( 'MD5' ,  @Email ), 2)
+
+	IF @ExistEmail = 1
+		BEGIN
+			SET @Result = 'Error__El Correo Ingresado ya Existe'
+		END
+	ELSE
+		BEGIN
+			INSERT INTO Users(Email,UserKey,Password,DateCreate)VALUES(LOWER(@Email),@UserKey,@PasswordMD5,GETDATE())
+			SET @Result = 'OK__Su registro fue Existoso'
+		END
+	SELECT @Result
+END
