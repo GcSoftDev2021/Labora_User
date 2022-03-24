@@ -116,6 +116,7 @@
     <Content Include="Resources\ImagesApp\Logo.png" />
     <Content Include="Resources\ImagesUsers\Usuario.png" />
     <Content Include="ScriptsApp\Login.js" />
+    <Content Include="ScriptsApp\PersonalInformation.js" />
     <Content Include="ScriptsApp\Register.js" />
     <Content Include="ScriptsApp\UserDashboard.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />

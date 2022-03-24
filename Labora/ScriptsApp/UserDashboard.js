@@ -1,6 +1,6 @@
 ﻿function SearchCookie() {
-    let IdUser = Cookies.get('UserToken');
-    if (IdUser == '' || IdUser == undefined || IdUser == null) {
+    let UserToken = Cookies.get('UserToken');
+    if (IdUser == '' || UserToken == undefined || UserToken == null) {
         Swal.fire({
             title: 'Mensaje del Sistema',
             text: "Su Sesión ya expiro, por favor vuelva a Ingresar",

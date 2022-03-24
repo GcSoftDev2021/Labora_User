@@ -134,3 +134,65 @@ ALTER TABLE PersonalInformation ADD CONSTRAINT FK_UserKey FOREIGN KEY (IdUser) r
 ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdDocumentType FOREIGN KEY (IdDocumentType) references DocumentType(Id)
 ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdNationality FOREIGN KEY (IdNationality) references Country(Id)
 ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdCity FOREIGN KEY (IdCity) references City(Id)
+
+go
+
+CREATE FUNCTION [dbo].[Fun_SearchNameCountry] (@Id INT)
+RETURNS VARCHAR(255)
+AS BEGIN
+DECLARE @NameCountry VARCHAR(255)
+	SELECT	@NameCountry = Name
+	FROM	Country
+	WHERE	Id = @Id
+	RETURN @NameCountry
+END
+
+go
+
+CREATE FUNCTION [dbo].[Fun_SearchNameCity] (@Id INT)
+RETURNS VARCHAR(255)
+AS BEGIN
+DECLARE @NameCity VARCHAR(255)
+	SELECT	@NameCity = Name
+	FROM	City
+	WHERE	Id = @Id
+	RETURN @NameCity
+END
+
+go
+
+CREATE FUNCTION [dbo].[Fun_SearchNameDocumentType] (@Id INT)
+RETURNS VARCHAR(255)
+AS BEGIN
+DECLARE @NameDocumentType VARCHAR(255)
+	SELECT	@NameDocumentType = Name
+	FROM	DocumentType
+	WHERE	Id = @Id
+	RETURN @NameDocumentType
+END
+
+go
+
+CREATE PROCEDURE SP_SearchInformationUser @UserKey varchar(255)
+AS
+BEGIN
+	SELECT
+		ISNULL(P.UserImage, '') As UserImage,
+        ISNULL(P.FirstName, '') As FirstName,
+        ISNULL(P.LastName, '') As LastName,
+		ISNULL(dbo.Fun_SearchNameDocumentType(IdDocumentType),'') As DocumentType, 
+        ISNULL(P.IdentificationNumber, '') As IdentificationNumber,
+        ISNULL(P.Email, '') As Email,
+        ISNULL(P.Phone,'') As Phone,
+        ISNULL(P.PhoneAdditional,'') As PhoneAdditional,
+		ISNULL(CONVERT(varchar,P.BirthDate,20), '') As BirthDate,
+        ISNULL(dbo.Fun_SearchNameCountry(IdNationality),'') As Nationality, 
+        ISNULL(P.ResidenceAdress,'') As ResidenceAdress,
+		ISNULL(dbo.Fun_SearchNameCity(IdNationality),'') As City
+	FROM		
+		PersonalInformation P,
+		Users U
+	WHERE 
+		P.IdUser = U.Id
+		AND U.UserKey = @UserKey
+END

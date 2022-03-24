@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="DataEntities\DataAccount.cs" />
     <Compile Include="DataEntities\DataCountry.cs" />
+    <Compile Include="DataEntities\DataUserInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,11 +4,16 @@
     Layout = "~/Views/Shared/_LayoutUserDashboard.cshtml";
 }
 
-<h2>Información Personals</h2>
+<h2>Información Personal</h2>
 
-<div style="margin-top:30px">
-    <img src="~/Resources/ImagesUsers/Usuario.png" style="height:150px;border-radius:50%"/>
-</div>
+<table class="table table-borderless" style="margin-top:30px">
+    <tr>
+        <td id="UserImage"></td>
+    </tr>
+    <tr>
+        <td><button class="btn btn-primary btn-sm">Cambiar Imagen Perfil</button></td>
+    </tr>
+</table>
 
 <div style="margin-top:30px">
     <table width="100%">
@@ -17,7 +22,7 @@
                 <span><strong>Nombres: </strong></span>
             </td>
             <td width="60%">
-                <label id="FirstName">Oscar Antonio</label>
+                <label id="FirstName"></label>
             </td>
         </tr>
         <tr>
@@ -25,7 +30,7 @@
                 <span><strong>Apellidos: </strong></span>
             </td>
             <td width="60%">
-                <label id="LastName">Castillo Perez</label>
+                <label id="LastName"></label>
             </td>
         </tr>
         <tr>
@@ -33,7 +38,7 @@
                 <span><strong>Tipo Documento: </strong></span>
             </td>
             <td width="60%">
-                <label id="DocumentType">Cedula de Ciudadania</label>
+                <label id="DocumentType"></label>
             </td>
         </tr>
         <tr>
@@ -41,7 +46,7 @@
                 <span><strong>Número Identificación: </strong></span>
             </td>
             <td width="60%">
-                <label id="IdentificationNumber">3167508</label>
+                <label id="IdentificationNumber"></label>
             </td>
         </tr>
         <tr>
@@ -49,7 +54,7 @@
                 <span><strong>Email: </strong></span>
             </td>
             <td width="60%">
-                <label id="Email">oscaracastillop@gmail.com</label>
+                <label id="Email"></label>
             </td>
         </tr>
         <tr>
@@ -57,7 +62,7 @@
                 <span><strong>Teléfono: </strong></span>
             </td>
             <td width="60%">
-                <label id="Phone">3156345538</label>
+                <label id="Phone"></label>
             </td>
         </tr>
         <tr>
@@ -65,7 +70,7 @@
                 <span><strong>Teléfono Adicional: </strong></span>
             </td>
             <td width="60%">
-                <label id="PhoneAdditional">3156345539</label>
+                <label id="PhoneAdditional"></label>
             </td>
         </tr>
         <tr>
@@ -73,7 +78,7 @@
                 <span><strong>Fecha Nacimiento: </strong></span>
             </td>
             <td width="60%">
-                <label id="IdentificationNumber">16/11/1982</label>
+                <label id="IdentificationNumber"></label>
             </td>
         </tr>
         <tr>
@@ -81,7 +86,7 @@
                 <span><strong>Nacionalidad: </strong></span>                
             </td>
             <td width="60%">
-                <label id="Nationality">Colombia</label>
+                <label id="Nationality"></label>
             </td>
         </tr>
         <tr>
@@ -89,7 +94,7 @@
                 <span><strong>Dirección Residencia: </strong></span>
             </td>
             <td width="60%">                
-                <label id="ResidenceAdress">Calle 20 # 2b_16 Barrio las Quintas</label>
+                <label id="ResidenceAdress"></label>
             </td>
         </tr>
         <tr>
@@ -97,7 +102,7 @@
                 <span><strong>Ciudad: </strong></span>
             </td>
             <td width="60%">
-                <label id="City">Facatativa, Cundinamarca</label>
+                <label id="City"></label>
             </td>
         </tr>
     </table>
@@ -105,3 +110,8 @@
 <div style="margin-top:30px">
     <a href="#">Actualizar Datos</a>
 </div>
+<script>
+    $(document).ready(function () {
+        SearchInformationUser();
+    });
+</script>
