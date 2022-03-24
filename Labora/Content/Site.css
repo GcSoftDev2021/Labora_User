@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    font-size:12px !important;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -14,5 +15,6 @@ input,
 select,
 textarea {
     max-width: 280px;
+    font-size:12px !important;
 }
 

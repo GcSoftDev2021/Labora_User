@@ -1,36 +1,64 @@
 ﻿
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutRegister.cshtml";
 }
 
 <script src="~/ScriptsApp/Register.js"></script>
-<h2>Registro</h2>
+<h5>Crea tu cuenta en LABORA</h5>
 
-<div>
-    <table class="table table-borderless">
-        <tr>
-            <td>
-                <span>Correo Electronico</span>
-                <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" autocomplete="off"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Contraseña <i style="font-size:11px;color:red">(8 Caracteres Máximo)</i></span>
-                <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="8" autocomplete="off"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Confirmar Contraseña</span>
-                <input style="min-width:100%" class="form-control" type="password" name="name" id="ConfirmPassword" value="" maxlength="8" autocomplete="off"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="btn btn-outline-success" onclick="Register()">Registrarse</button>
-            </td>
-        </tr>
-    </table>
+<div style="width:100%">
+    <div style="float:left;width:40%; margin-top:90px;">
+            <div style="background-color: #EBF5FB; width: 90%; padding: 20px; border-radius: 15px; margin-left: auto; margin-right: auto ">
+                <label style="text-align:justify;">
+                    Bienvenido, completa los siguientes datos para realizar el registro.
+                </label>
+            </div>
+        </div>
+    
+    <div style="background-color: #EBF5FB; border-radius: 15px; padding: 20px; margin-top: 20px; width: 60%; float: right ">
+
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <span>Tipo Documento</span>
+                    <select class="form-control" id="DocumentType" style="min-width:100%">
+                        <option value="-1">Seleccione ...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Número Identificación</span>
+                    <input style="min-width:100%" class="form-control" type="text" name="name" id="IdentificationNumber" value="" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Correo Electronico</span>
+                    <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Contraseña</span>
+                    <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="16" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Confirmar Contraseña</span>
+                    <input style="min-width:100%" class="form-control" type="password" name="name" id="ConfirmPassword" value="" maxlength="16" autocomplete="off" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-success btn-sm" onclick="Register()">Registrarse</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="clearfix"></div>
 </div>
+
 

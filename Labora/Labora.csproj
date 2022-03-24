@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Resources\ImagesApp\BackgroundRegister.jpg" />
     <Content Include="Resources\ImagesApp\Logo.png" />
     <Content Include="Resources\ImagesUsers\Usuario.png" />
     <Content Include="ScriptsApp\Login.js" />
@@ -263,6 +264,7 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Shared\_LayoutUserDashboard.cshtml" />
     <Content Include="Views\UserInformation\PersonalInformation.cshtml" />
+    <Content Include="Views\Shared\_LayoutRegister.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

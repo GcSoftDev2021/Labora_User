@@ -33,13 +33,17 @@
                         <a class="nav-link" aria-current="page" href="/UserDashboard/Home">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Perfil</a>
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hoja de Vida</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Información Personal</a></li>
                             @*<li><hr class="dropdown-divider"></li>*@
-                            <li><a class="dropdown-item" href="/Account/ChangePassword">Información Laboral</a></li>
+                            <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Información Familiar</a></li>
+                            <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Perfil Educativo</a></li>
+                            <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Perfil Laboral</a></li>
+                            <li><a class="dropdown-item" href="/Account/ChangePassword">Experiencia Laboral</a></li>
                             @*<li><hr class="dropdown-divider"></li>*@
-                            <li><a class="dropdown-item" href="/Account/ChangePassword">Habilidades</a></li>
+
+                            <li><a class="dropdown-item" href="/Account/ChangePassword">Habilidades y Competencias</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -64,7 +68,7 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content" style="margin-top:30px">
+    <div class="container body-content" style="margin-top:30px; font-size:12px">
         @RenderBody()
         <hr />
         <footer>

@@ -10,6 +10,13 @@ unique(Name)
 
 go
 
+Insert Into Country (Name)Values('Colombia')
+Insert Into Country (Name)Values('Venezuela')
+Insert Into Country (Name)Values('Ecuador')
+Insert Into Country (Name)Values('Perú')
+
+go
+
 CREATE PROCEDURE [dbo].[SP_ListCountry]
 AS
 BEGIN
@@ -100,6 +107,11 @@ unique(Name)
 
 go
 
+Insert Into DocumentType (Name)Values('Cédula Ciudadanía')
+Insert Into DocumentType (Name)Values('Cédula Extranjería')
+
+go
+
 CREATE TABLE City
 (Id int identity(1,1) Primary key ,
 IdCountry int,
@@ -108,8 +120,18 @@ Activo int default 1,
 unique(Name)
 )
 
-
 ALTER TABLE City ADD CONSTRAINT FK_IdCountry FOREIGN KEY (IdCountry) references Country(Id)
+
+go
+
+Insert Into City(IdCountry, Name)Values(1,'Bogotá DC, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Madrid, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Mosquera, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Facatativa, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Funza, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Cota, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Chia, Cundinamarca')
+Insert Into City(IdCountry, Name)Values(1,'Villeta, Cundinamarca')
 
 go
 
