@@ -26,9 +26,9 @@ namespace Labora.Controllers
             return View();
         }
 
-        public JsonResult UserRegister(string Email, string Password)
+        public JsonResult UserRegister(string Email, string Password, string DocumentType, string IdentificationNumber)
         {
-            string Result = _dataAccount.UserRegister(Email, Password);
+            string Result = _dataAccount.UserRegister(Email, Password, DocumentType, IdentificationNumber);
             return Json(Result);
         }
 

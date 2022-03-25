@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataCity.cs" />
     <Compile Include="DataContext\ModelLabora.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,7 +68,9 @@
       <DependentUpon>ModelLabora.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataEntities\DataAccount.cs" />
+    <Compile Include="DataEntities\DataCivilStatus.cs" />
     <Compile Include="DataEntities\DataCountry.cs" />
+    <Compile Include="DataEntities\DataDocumentType.cs" />
     <Compile Include="DataEntities\DataUserInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

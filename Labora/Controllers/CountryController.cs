@@ -13,8 +13,8 @@ namespace Labora.Controllers
        
         public JsonResult ListCountry()
         {
-            var resultado = _dataCountry.ListCountry();
-            return Json(resultado);
+            var Result = _dataCountry.ListCountry();
+            return Json(Result);
         }
     }
 }

@@ -15,7 +15,9 @@
             $('#Phone').text(Result[0].Phone);
             $('#PhoneAdditional').text(Result[0].PhoneAdditional);
             $('#BirthDate').text(Result[0].BirthDate);
+            $('#BirthCity').text(Result[0].BirthCity);
             $('#Nationality').text(Result[0].Nationality);
+            $('#CivilStatus').text(Result[0].CivilStatus);
             $('#ResidenceAdress').text(Result[0].ResidenceAdress);
             $('#City').text(Result[0].City);
         },

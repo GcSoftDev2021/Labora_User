@@ -19,7 +19,9 @@ namespace Labora.Models
             public string Phone { get; set; }
             public string PhoneAdditional { get; set; }
             public string BirthDate { get; set; }
+            public string BirthCity { get; set; }
             public string Nationality { get; set; }
+            public string CivilStatus { get; set; }
             public string ResidenceAdress { get; set; }
             public string City { get; set; }
 

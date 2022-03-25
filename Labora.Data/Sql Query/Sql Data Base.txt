@@ -1,5 +1,33 @@
 ﻿update-package Microsoft.CodeDom.Providers.DotNetCompilerPlatform  -> Corregir error de ruta.
 
+CREATE TABLE CivilStatus 
+(Id int identity(1,1) Primary key ,
+Name varchar(255),
+Active int default 1,
+unique(Name)
+)
+
+go
+
+Insert Into CivilStatus (Name)Values('Soltero(a)')
+Insert Into CivilStatus (Name)Values('Casado(a)')
+Insert Into CivilStatus (Name)Values('Unión Libre')
+Insert Into CivilStatus (Name)Values('Separado(a)')
+Insert Into CivilStatus (Name)Values('Viudo(a)')
+
+go
+
+CREATE FUNCTION [dbo].[Fun_SearchNameCivilStatus] (@Id INT)
+RETURNS VARCHAR(255)
+AS BEGIN
+DECLARE @NameCivilStatus VARCHAR(255)
+	SELECT	@NameCivilStatus = Name
+	FROM	CivilStatus
+	WHERE	Id = @Id
+	RETURN @NameCivilStatus
+END
+
+go
 
 CREATE TABLE Country 
 (Id int identity(1,1) Primary key ,
@@ -36,7 +64,7 @@ unique(Email)
 )
 
 go
-CREATE PROCEDURE [dbo].[SP_Register] @Email varchar(255), @Password varchar(255), 
+CREATE PROCEDURE [dbo].[SP_Register] @Email varchar(255), @Password varchar(255), @DocumentType varchar(255), @IdentificationNumber varchar(255),
 @Result varchar(max) OUTPUT
 AS
 BEGIN
@@ -52,7 +80,7 @@ BEGIN
 	ELSE
 		BEGIN
 			INSERT INTO Users(Email,UserKey,Password,DateCreate)VALUES(LOWER(@Email),@UserKey,@PasswordMD5,GETDATE())
-			INSERT INTO PersonalInformation(IdUser,	Email, UserImage)VALUES(@@IDENTITY, @Email, '/Resources/ImagesUsers/Usuario.png')
+			INSERT INTO PersonalInformation(IdUser, IdDocumentType,	IdentificationNumber, Email, UserImage)VALUES(@@IDENTITY, @DocumentType, @IdentificationNumber, @Email, '/Resources/ImagesUsers/Usuario.png')
 			SET @Result = 'OK__Su registro fue Existoso'
 		END
 	SELECT @Result
@@ -101,7 +129,7 @@ go
 CREATE TABLE DocumentType
 (Id int identity(1,1) Primary key,
 Name varchar(255),
-Activo int default 1,
+Active int default 1,
 unique(Name)
 )
 
@@ -109,6 +137,15 @@ go
 
 Insert Into DocumentType (Name)Values('Cédula Ciudadanía')
 Insert Into DocumentType (Name)Values('Cédula Extranjería')
+Insert Into DocumentType (Name)Values('Pasaporte')
+
+go
+
+CREATE PROCEDURE [dbo].[SP_ListDocumentType]
+AS
+BEGIN
+	SELECT Id, Name FROM DocumentType WHERE Active = 1 order by Name Asc
+END
 
 go
 
@@ -116,7 +153,7 @@ CREATE TABLE City
 (Id int identity(1,1) Primary key ,
 IdCountry int,
 Name varchar(255),
-Activo int default 1,
+Active int default 1,
 unique(Name)
 )
 
@@ -135,6 +172,14 @@ Insert Into City(IdCountry, Name)Values(1,'Villeta, Cundinamarca')
 
 go
 
+CREATE PROCEDURE [dbo].[SP_ListCity]
+AS
+BEGIN
+	SELECT Id, Name FROM City WHERE Active = 1 order by Name Asc
+END
+
+go
+
 CREATE TABLE PersonalInformation 
 (Id int identity(1,1) Primary key ,
 IdUser int,
@@ -146,7 +191,9 @@ Email varchar(255),
 Phone varchar(255),
 PhoneAdditional varchar(255),
 BirthDate date,
+BirthCity varchar(255),
 IdNationality int,
+IdCivilStatus int,
 ResidenceAdress varchar(255),
 IdCity int,
 UserImage varchar(255)
@@ -156,6 +203,7 @@ ALTER TABLE PersonalInformation ADD CONSTRAINT FK_UserKey FOREIGN KEY (IdUser) r
 ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdDocumentType FOREIGN KEY (IdDocumentType) references DocumentType(Id)
 ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdNationality FOREIGN KEY (IdNationality) references Country(Id)
 ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdCity FOREIGN KEY (IdCity) references City(Id)
+ALTER TABLE PersonalInformation ADD CONSTRAINT FK_IdCivilStatus FOREIGN KEY (IdCivilStatus) references CivilStatus(Id)
 
 go
 
@@ -208,7 +256,9 @@ BEGIN
         ISNULL(P.Phone,'') As Phone,
         ISNULL(P.PhoneAdditional,'') As PhoneAdditional,
 		ISNULL(CONVERT(varchar,P.BirthDate,20), '') As BirthDate,
-        ISNULL(dbo.Fun_SearchNameCountry(IdNationality),'') As Nationality, 
+		ISNULL(P.BirthCity,'') As BirthCity,        
+		ISNULL(dbo.Fun_SearchNameCity(IdNationality),'') As Nationality,
+		ISNULL(dbo.Fun_SearchNameCivilStatus(IdCivilStatus),'') As CivilStatus, 
         ISNULL(P.ResidenceAdress,'') As ResidenceAdress,
 		ISNULL(dbo.Fun_SearchNameCity(IdNationality),'') As City
 	FROM		

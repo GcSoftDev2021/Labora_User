@@ -12,16 +12,18 @@ namespace Labora.Data.DataEntities
     public class DataAccount
     {
         readonly LaboraEntities _conection = new LaboraEntities();
-        public string UserRegister(string Email, string Password)
+        public string UserRegister(string Email, string Password, string DocumentType, string IdentificationNumber)
         {
             string Result = String.Empty;
             try
             {
                 var varEmail = new SqlParameter("@Email", SqlDbType.VarChar) { Value = Email };
                 var varPassword = new SqlParameter("@Password", SqlDbType.VarChar) { Value = Password };
+                var varDocumentType = new SqlParameter("@DocumentType", SqlDbType.VarChar) { Value = DocumentType };
+                var varIdentificationNumber = new SqlParameter("@IdentificationNumber", SqlDbType.VarChar) { Value = IdentificationNumber };
                 var varResult = new SqlParameter("@Result", SqlDbType.VarChar) { Direction = ParameterDirection.Output, Size = 255 };
 
-                _conection.Database.ExecuteSqlCommand("SP_Register @Email, @Password, @Result Output", varEmail, varPassword, varResult);
+                _conection.Database.ExecuteSqlCommand("SP_Register @Email, @Password, @DocumentType, @IdentificationNumber, @Result Output", varEmail, varPassword, varDocumentType, varIdentificationNumber, varResult);
                 Result = Convert.ToString(varResult.Value);
             }
             catch (Exception ex)

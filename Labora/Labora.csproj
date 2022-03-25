@@ -116,6 +116,10 @@
     <Content Include="Resources\ImagesApp\BackgroundRegister.jpg" />
     <Content Include="Resources\ImagesApp\Logo.png" />
     <Content Include="Resources\ImagesUsers\Usuario.png" />
+    <Content Include="ScriptsApp\City.js" />
+    <Content Include="ScriptsApp\CivilStatus.js" />
+    <Content Include="ScriptsApp\Country.js" />
+    <Content Include="ScriptsApp\DocumentType.js" />
     <Content Include="ScriptsApp\Login.js" />
     <Content Include="ScriptsApp\PersonalInformation.js" />
     <Content Include="ScriptsApp\Register.js" />
@@ -223,7 +227,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\CivilStatusController.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\DocumentTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserDashboardController.cs" />
     <Compile Include="Controllers\UserInformationController.cs" />
@@ -252,7 +259,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout7.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
@@ -264,7 +271,7 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Shared\_LayoutUserDashboard.cshtml" />
     <Content Include="Views\UserInformation\PersonalInformation.cshtml" />
-    <Content Include="Views\Shared\_LayoutRegister.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -275,7 +282,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\City\" />
+    <Folder Include="Views\CivilStatus\" />
     <Folder Include="Views\Country\" />
+    <Folder Include="Views\DocumentType\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Labora.Data\Labora.Data.csproj">

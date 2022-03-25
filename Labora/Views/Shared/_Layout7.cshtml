@@ -13,7 +13,7 @@
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
     <script src="~/Scripts/js-cookie/js.cookie.js"></script>
 </head>
-<body style="background-image:url(../../Resources/ImagesApp/BackgroundRegister.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder">
@@ -34,23 +34,21 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Account/Login">Ingresar</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cuenta</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/Account/Login">Ingresar</a></li>
+                            <li><a class="dropdown-item" href="/Account/Register">Registrarse</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/Account/RecoverPassword">Recuperar Contraseña</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a style="color:black; font-weight:bold" class="nav-link" href="/Account/Register">Registrarse</a>
-                    </li>
-                    @*<li class="nav-item">
-                        <a class="nav-link" href="/Account/RecoverPassword">Recuperar Contraseña</a>
-                    </li>*@                   
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content" style="margin-top:30px">
         @RenderBody()
-
-        
         <hr />
         <footer>
             <p style="font-size:12px">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>

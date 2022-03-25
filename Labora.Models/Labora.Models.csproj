@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="City.cs" />
+    <Compile Include="CivilStatus.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="DocumentType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInformation.cs" />
   </ItemGroup>

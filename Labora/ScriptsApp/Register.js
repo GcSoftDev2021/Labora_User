@@ -2,6 +2,8 @@
     let Email = $("#Email").val();
     let Password = $("#Password").val();
     let ConfirmPassword = $("#ConfirmPassword").val();
+    let DocumentType = $("#SelectDocumentType").val();
+    let IdentificationNumber = $("#IdentificationNumber").val();
     emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     PasswordRegex = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/i;
 
@@ -23,29 +25,41 @@
                             document.getElementById('ConfirmPassword').focus();
                             Swal.fire('Mensaje del Sistema', 'Las contraseñas no son iguales', 'warning');
                         } else {
-                            $.ajax({
-                                type: 'POST',
-                                dataType: 'json',
-                                url: '/Account/UserRegister',
-                                data: {
-                                    Email: Email,
-                                    Password: Password
-                                },
-                                success: function (Result) {
-                                    value = Result.split('__');
-                                    if (value[0] == 'OK') {
-                                        Swal.fire({
-                                            title: 'Mensaje del Sistema',
-                                            text: value[1],
-                                            icon: 'success',
-                                        }).then((result) => {
-                                            location.reload();
-                                        })
-                                    } else {
-                                        Swal.fire('Mensaje del Sistema', value[1], 'info');
-                                    }
+                            if (DocumentType == -1) {
+                                document.getElementById('SelectDocumentType').focus();
+                                Swal.fire('Mensaje del Sistema', 'Seleccione Tipo Documento', 'warning');
+                            } else {
+                                if (IdentificationNumber == "" || IdentificationNumber == null || IdentificationNumber == undefined) {
+                                    document.getElementById('IdentificationNumber').focus();
+                                    Swal.fire('Mensaje del Sistema', 'Digite el Número de Identificación', 'warning');
+                                } else {
+                                    $.ajax({
+                                        type: 'POST',
+                                        dataType: 'json',
+                                        url: '/Account/UserRegister',
+                                        data: {
+                                            Email: Email,
+                                            Password: Password,
+                                            DocumentType: DocumentType,
+                                            IdentificationNumber: IdentificationNumber
+                                        },
+                                        success: function (Result) {
+                                            value = Result.split('__');
+                                            if (value[0] == 'OK') {
+                                                Swal.fire({
+                                                    title: 'Mensaje del Sistema',
+                                                    text: value[1],
+                                                    icon: 'success',
+                                                }).then((result) => {
+                                                    location.reload();
+                                                })
+                                            } else {
+                                                Swal.fire('Mensaje del Sistema', value[1], 'info');
+                                            }
+                                        }
+                                    });
                                 }
-                            });
+                            }
                         }
                     }
                 } else {
@@ -59,6 +73,8 @@
         }
     }
 
+
+   
 
 
     //if (Email == "" || Email == null || Email == undefined) {        
