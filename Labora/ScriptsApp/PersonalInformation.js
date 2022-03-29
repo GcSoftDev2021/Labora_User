@@ -1,4 +1,5 @@
 ﻿function SearchInformationUser() {
+
     let UserToken = Cookies.get('UserToken');
     $.ajax({
         type: 'POST',
