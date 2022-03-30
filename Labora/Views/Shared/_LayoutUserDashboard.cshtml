@@ -16,7 +16,7 @@
     <script src="~/ScriptsApp/UserDashboard.js"></script>
     <script src="~/ScriptsApp/PersonalInformation.js"></script>
 </head>
-<body  style="background-image:url(../../Resources/ImagesApp/BackgroundRegister.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
+<body  style="background-image:url(../../Resources/ImagesApp/Background.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder">
@@ -70,10 +70,12 @@
     </nav>
     <div class="container body-content" style="margin-top:30px; font-size:12px">
         @RenderBody()
-        <hr />
-        <footer>
-            <p style="font-size:12px">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>
-        </footer>
+        @*<hr />*@
+        @*<div style="background-color: white; width: 100%; border-radius: 15px;text-align:center; margin-top: 10px">
+            <footer>
+                <p style="font-size:12px">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>
+            </footer>
+        </div>*@
     </div>
 
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>

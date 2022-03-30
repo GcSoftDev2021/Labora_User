@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Resources\ImagesApp\Background.jpg" />
     <Content Include="Resources\ImagesApp\BackgroundRegister.jpg" />
     <Content Include="Resources\ImagesApp\Logo.png" />
     <Content Include="Resources\ImagesUsers\Usuario.png" />

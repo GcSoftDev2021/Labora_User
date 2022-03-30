@@ -3,26 +3,33 @@
     ViewBag.Title = "Login";
 }
 <script src="~/ScriptsApp/Login.js"></script>
-<h2>Ingresar</h2>
 
-<div>
-    <table class="table table-borderless">
-        <tr>
-            <td>
-                <span>Correo Electronico</span>
-                <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Contraseña</span>
-                <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="16" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <button class="btn btn-outline-success" onclick="Login()">Ingresar</button>
-            </td>
-        </tr>
-    </table>
+
+<div style="width:100%">
+    <div style="float: left; background-color: white; padding: 20px; border-radius: 15px; width: 40%; box-shadow: 10px 5px 5px black ">
+        <label>Bienvenido. Ingrese a la plataforma para buscar ofertas laborales o postularse a una</label>
+    </div>
+    <div style="float: right; background-color: white; padding: 20px; border-radius: 15px; width: 55%; box-shadow: 10px 5px 5px black ">
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <span>Correo Electronico</span>
+                    <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Contraseña</span>
+                    <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="16" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="btn btn-primary btn-sm" onclick="Login()">Ingresar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
+
+
