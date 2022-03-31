@@ -16,30 +16,30 @@
     <script src="~/ScriptsApp/UserDashboard.js"></script>
     <script src="~/ScriptsApp/PersonalInformation.js"></script>
 </head>
-<body  style="background-image:url(../../Resources/ImagesApp/Background.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
+<body style="background-image:url(../../Resources/ImagesApp/Background.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder">
                 L A B
                 <img src="~/Resources/ImagesApp/Logo.png" style="height:30px" />
-                R A 
+                R A
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/UserDashboard/Home">Inicio</a>
+                    <li class="nav-item">                        
+                        <a class="nav-link" aria-current="page" href="/UserDashboard/Home" style="font-size:20px; color: cornflowerblue"><img style="height:40px" src="~/Resources/ImagesApp/home.png" /> Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hoja de Vida</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Información Personal</a></li>
                             @*<li><hr class="dropdown-divider"></li>*@
-                            <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Información Familiar</a></li>
+                            <li><a class="dropdown-item" href="/UserInformation/FamilyInformation">Información Familiar</a></li>
                             <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Perfil Educativo</a></li>
-                            <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Perfil Laboral</a></li>
+                            <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Experiencia Laboral</a></li>
                             <li><a class="dropdown-item" href="/Account/ChangePassword">Experiencia Laboral</a></li>
                             @*<li><hr class="dropdown-divider"></li>*@
 
@@ -71,12 +71,15 @@
     <div class="container body-content" style="margin-top:30px; font-size:12px">
         @RenderBody()
         @*<hr />*@
-        @*<div style="background-color: white; width: 100%; border-radius: 15px;text-align:center; margin-top: 10px">
-            <footer>
-                <p style="font-size:12px">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>
-            </footer>
-        </div>*@
+
+
     </div>
+    @*<div>
+        <footer style="background-color: black; width: 100%; text-align:center; position:fixed; bottom:0px">
+            <p style="font-size:12px; color:white">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>
+        </footer>
+    </div>*@
+    
 
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

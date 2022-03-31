@@ -6,6 +6,7 @@
     <title>Labora - @ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/icons-1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
     <script src="~/Scripts/Sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="~/Scripts/Sweetalert2/dist/sweetalert2.min.js"></script>
     <link href="~/Scripts/Sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
@@ -13,10 +14,10 @@
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
     <script src="~/Scripts/js-cookie/js.cookie.js"></script>
 </head>
-<body style="background-image:url(../../Resources/ImagesApp/BackgroundRegister.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body style="background-image:url(../../Resources/ImagesApp/Background.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F1F1F1; box-shadow: 15px 0px 15px black ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder">
+            <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder; color:black">
                 L A B
                 <img src="~/Resources/ImagesApp/Logo.png" style="height:30px" />
                 R A
@@ -26,19 +27,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Home/Home">Inicio</a>
+                        <a class="nav-link" aria-current="page" href="/Home/Home" style="font-size:20px; color: black"><i class="bi-house-fill" style="color:black"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Home/Contact">Contacto</a>
+                        <a class="nav-link" aria-current="page" href="/Home/Contact" style="font-size:20px; color: black"><i class="bi-envelope-fill" style="color:black"></i> Contacto</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Account/Login">Ingresar</a>
+                        <a class="nav-link" aria-current="page" href="/Account/Login" style="font-size:20px; color: black"><i class="bi-arrow-right-square-fill" style="color:black"></i> Ingresar</a>                        
                     </li>
                     <li class="nav-item">
-                        <a style="color:black; font-weight:bold" class="nav-link" href="/Account/Register">Registrarse</a>
+                        <a class="nav-link" aria-current="page" href="/Account/Register" style="font-size:20px; color: black"><i class="bi-person-plus-fill" style="color:black"></i> Registrarse</a>
                     </li>                  
                 </ul>
             </div>

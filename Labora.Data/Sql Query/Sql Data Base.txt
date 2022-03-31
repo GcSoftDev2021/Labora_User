@@ -257,10 +257,10 @@ BEGIN
         ISNULL(P.PhoneAdditional,'') As PhoneAdditional,
 		ISNULL(CONVERT(varchar,P.BirthDate,20), '') As BirthDate,
 		ISNULL(P.BirthCity,'') As BirthCity,        
-		ISNULL(dbo.Fun_SearchNameCity(IdNationality),'') As Nationality,
+		ISNULL(dbo.Fun_SearchNameCountry(IdNationality),'') As Nationality,
 		ISNULL(dbo.Fun_SearchNameCivilStatus(IdCivilStatus),'') As CivilStatus, 
         ISNULL(P.ResidenceAdress,'') As ResidenceAdress,
-		ISNULL(dbo.Fun_SearchNameCity(IdNationality),'') As City
+		ISNULL(dbo.Fun_SearchNameCity(IdCity),'') As City
 	FROM		
 		PersonalInformation P,
 		Users U

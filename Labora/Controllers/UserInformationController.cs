@@ -15,6 +15,32 @@ namespace Labora.Controllers
         {
             return View();
         }
+
+        public ActionResult PersonalInformation_Edit()
+        {
+            return View();
+        }
+
+        public ActionResult FamilyInformation() 
+        {
+            return View(); 
+        }
+
+        public ActionResult FamilyInformation_Edit()
+        {
+            return View();
+        }
+
+        public ActionResult WorkExperience()
+        {
+            return View();
+        }
+
+        public ActionResult WorkExperience_Edit()
+        {
+            return View();
+        }
+
         public JsonResult SearchInformationUser(string UserKey)
         {
             var Result = _dataUserInformation.SearchInformationUser(UserKey);
