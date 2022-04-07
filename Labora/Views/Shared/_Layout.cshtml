@@ -27,7 +27,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
+
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/Home/Home" style="font-size:20px; color: black"><i class="bi-house-fill" style="color:black"></i> Inicio</a>
                     </li>
@@ -37,26 +37,22 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Account/Login" style="font-size:20px; color: black"><i class="bi-arrow-right-square-fill" style="color:black"></i> Ingresar</a>                        
+                        <a class="nav-link" aria-current="page" href="/Account/Login" style="font-size:20px; color: black"><i class="bi-arrow-right-square-fill" style="color:black"></i> Ingresar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/Account/Register" style="font-size:20px; color: black"><i class="bi-person-plus-fill" style="color:black"></i> Registrarse</a>
-                    </li>                  
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content" style="margin-top:30px">
         @RenderBody()
-
-        
-        @*<hr />*@
-        @*<div style="background-color: white; width: 100%; border-radius: 15px;text-align:center; margin-top:10px">
-            <footer>
-                <p style="font-size:12px">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>
-            </footer>
-        </div>*@
-       
+    </div>
+    <div style="">
+        <footer style="background-color: white; width: 100%; text-align: center; position: fixed; bottom: 0px; box-shadow: 0px -5px 23px 3px black ">
+            <label style="font-size:12px; color:black;"><strong>Labora Aplication</strong> Versión 1.0.0 - Todos los Derechos reservados &copy; By GcSoftDev @DateTime.Now.Year</label>
+        </footer> 
     </div>
 
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
