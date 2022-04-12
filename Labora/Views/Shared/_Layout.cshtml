@@ -15,47 +15,48 @@
     <script src="~/Scripts/js-cookie/js.cookie.js"></script>
 </head>
 <body style="background-image:url(../../Resources/ImagesApp/Background.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover;">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F1F1F1; box-shadow: 15px 0px 15px black ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder; color:black">
-                L A B
-                <img src="~/Resources/ImagesApp/Logo.png" style="height:30px" />
-                R A
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    @*<body style="background-color: #F1F1F1">*@
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F1F1F1; box-shadow: 15px 0px 15px black ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:20px; font-weight:bolder; color:black">
+                    L A B
+                    <img src="~/Resources/ImagesApp/Logo.png" style="height:20px" />
+                    R A
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Home/Home" style="font-size:20px; color: black"><i class="bi-house-fill" style="color:black"></i> Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Home/Contact" style="font-size:20px; color: black"><i class="bi-envelope-fill" style="color:black"></i> Contacto</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Account/Login" style="font-size:20px; color: black"><i class="bi-arrow-right-square-fill" style="color:black"></i> Ingresar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/Account/Register" style="font-size:20px; color: black"><i class="bi-person-plus-fill" style="color:black"></i> Registrarse</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a style="color: black; font-weight: bold" class="nav-link" aria-current="page" href="/Home/Home"><i class="bi-house"></i>  Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: black; font-weight: bold" class="nav-link" aria-current="page" href="/Home/Contact"><i class="bi-envelope"></i>  Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a style="color: black; font-weight: bold" class="nav-link" aria-current="page" href="/Account/Login"><i class="bi-file-earmark-lock"></i>  Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="color: black; font-weight: bold" class="nav-link" aria-current="page" href="/Account/Register"><i class="bi-person-plus"></i>  Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+        <div class="container body-content" style="margin-top:30px">
+            @RenderBody()
         </div>
-    </nav>
-    <div class="container body-content" style="margin-top:30px">
-        @RenderBody()
-    </div>
-    @*<div style="">
-        <footer style="background-color: white; width: 100%; text-align: center; position: fixed; bottom: 0px; box-shadow: 0px -5px 23px 3px black ">
-            <label style="font-size:12px; color:black;"><strong>Labora Aplication</strong> Versión 1.0.0 - Todos los Derechos reservados &copy; By GcSoftDev @DateTime.Now.Year</label>
-        </footer> 
-    </div>*@
+        <div style="">
+            <footer style="background-color: #F1F1F1; width: 100%; text-align: center; position: fixed; bottom: 0px; box-shadow: 0px -5px 23px 3px black ">
+                <label style="font-size:12px; color:black;"><strong>Labora Aplication</strong> Versión 1.0.0 - Todos los Derechos reservados &copy; By GcSoftDev @DateTime.Now.Year</label>
+            </footer>
+        </div>
 
-    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-</body>
+        <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>
 </html>
