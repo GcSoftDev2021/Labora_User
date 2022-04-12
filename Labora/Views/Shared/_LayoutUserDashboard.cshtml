@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labora | @ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/icons-1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <script src="~/Scripts/Sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="~/Scripts/Sweetalert2/dist/sweetalert2.min.js"></script>
     <link href="~/Scripts/Sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
@@ -17,11 +18,11 @@
     <script src="~/ScriptsApp/PersonalInformation.js"></script>
 </head>
 <body style="background-image:url(../../Resources/ImagesApp/Background.jpg); background-repeat:no-repeat;background-attachment:fixed; background-size:cover">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F1F1F1; box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.95) ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:30px; font-weight:bolder">
+            <a class="navbar-brand" href="/" style="font-family:Castellar; font-size:20px; font-weight:bolder">
                 L A B
-                <img src="~/Resources/ImagesApp/Logo.png" style="height:30px" />
+                <img src="~/Resources/ImagesApp/Logo.png" style="height:20px" />
                 R A
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,11 +30,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">                        
-                        <a class="nav-link" aria-current="page" href="/UserDashboard/Home" style="font-size:20px; color: cornflowerblue"><img style="height:40px" src="~/Resources/ImagesApp/home.png" /> Inicio</a>
+                    <li class="nav-item">
+                        <a style="color: black; font-weight: bold" class="nav-link" aria-current="page" href="/UserDashboard/Home"><i class="bi-house"></i>  Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hoja de Vida</a>
+                        <a style="color: black; font-weight: bold" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi-file-text"></i> Hoja de Vida</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/UserInformation/PersonalInformation">Información Personal</a></li>
                             @*<li><hr class="dropdown-divider"></li>*@
@@ -47,7 +48,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Empresas</a>
+                        <a style="color: black; font-weight: bold" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi-hospital"></i> Empresas</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/Account/ChangePassword">Empresas</a></li>
                             @*<li><hr class="dropdown-divider"></li>*@
@@ -57,27 +58,25 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cuenta</a>
+                        <a style="color: black; font-weight:bold" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi-person-circle"></i> Cuenta</a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/Account/ChangePassword">Cambiar Contraseña</a></li>
+                            <li><a class="dropdown-item" href="/Account/ChangePassword"><i class="bi-key"></i> Cambiar Contraseña</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="javascript:Loguot()">Cerrar Sesión</a></li>
+                            <li><a class="dropdown-item" href="javascript:Loguot()"><i class="bi-x-circle"></i> Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container body-content" style="margin-top:30px; font-size:12px">
+    <div class="container body-content" style="margin-top:30px">
         @RenderBody()
     </div>
-    <div>
-        <footer style="background-color: black; width: 100%; text-align:center; position:fixed; bottom:0px">
-            <p style="font-size:12px; color:white">Todos los Derechos reservados &copy; @DateTime.Now.Year - Labora Application By GcSoftDev</p>
+    <div style="">
+        <footer style="background-color: #F1F1F1; width: 100%; text-align: center; position: fixed; bottom: 0px; box-shadow: 0px -1px 10px 0px rgba(0,0,0,0.95) ">
+            <label style="font-size:12px; color:black;"><strong>Labora Aplication</strong> Versión 1.0.0 - Todos los Derechos reservados &copy; By GcSoftDev @DateTime.Now.Year</label>
         </footer>
     </div>
-    
-
     <script src="~/Scripts/jquery-3.6.0.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

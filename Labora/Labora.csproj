@@ -3571,6 +3571,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="Scripts\js-cookie\js.cookie-2.2.1.min.js" />
     <Content Include="Scripts\js-cookie\js.cookie.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Sweetalert2\dist\sweetalert2.all.js" />
     <Content Include="Scripts\Sweetalert2\dist\sweetalert2.all.min.js" />
     <Content Include="Scripts\Sweetalert2\dist\sweetalert2.css" />
