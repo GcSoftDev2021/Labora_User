@@ -4311,11 +4311,11 @@ textarea.form-control-lg {
     overflow-y: visible;
   }
 }
-@media (min-width: 1400px) {
+/*@media (min-width: 1400px) {
   .navbar-expand-xxl {
     flex-wrap: nowrap;
     justify-content: flex-start;
-  }
+  }*/
   .navbar-expand-xxl .navbar-nav {
     flex-direction: row;
   }

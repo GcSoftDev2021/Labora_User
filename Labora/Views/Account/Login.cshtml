@@ -4,8 +4,35 @@
 }
 <script src="~/ScriptsApp/Login.js"></script>
 
-<div style="width: 100%; border-radius: 15px; box-shadow: 0px 0px 23px 3px rgba(0,0,0,0.9)">
-    <div style="margin-left: auto; margin-right: auto; background-color: white; padding: 20px; width: 100%; border-radius: 15px">
+<div>
+    <table class="table table-borderless">
+        <tr>
+            <td>
+                <label style="font-weight:bold">Iniciar Sesión</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Correo Electronico</span>
+                <input class="form-control" type="email" name="name" id="Email" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span>Contraseña</span>
+                <input class="form-control" type="password" name="name" id="Password" value="" maxlength="16" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-primary btn-sm" onclick="Login()">Ingresar</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@*<div style="border-radius: 15px; box-shadow: 0px 0px 23px 3px rgba(0,0,0,0.9)">
+    <div style="margin-left: auto; margin-right: auto; background-color: white; padding: 20px; border-radius: 15px">
         <table class="table table-borderless">
             <tr>
                 <td>
@@ -15,13 +42,13 @@
             <tr>
                 <td>
                     <span>Correo Electronico</span>
-                    <input style="min-width:100%" class="form-control" type="email" name="name" id="Email" value="" />
+                    <input class="form-control" type="email" name="name" id="Email" value="" />
                 </td>
             </tr>
             <tr>
                 <td>
                     <span>Contraseña</span>
-                    <input style="min-width:100%" class="form-control" type="password" name="name" id="Password" value="" maxlength="16" />
+                    <input class="form-control" type="password" name="name" id="Password" value="" maxlength="16" />
                 </td>
             </tr>
             <tr>
@@ -31,13 +58,13 @@
             </tr>
         </table>
     </div>
-</div>
+</div>*@
 
 
 @*<div style="width:100%">
-    <div style="float: right; background-color: white; padding: 20px; border-radius: 15px; width: 60%; box-shadow: 10px 5px 5px black ">             
-        
-    </div>
-</div>*@
+        <div style="float: right; background-color: white; padding: 20px; border-radius: 15px; width: 60%; box-shadow: 10px 5px 5px black ">
+
+        </div>
+    </div>*@
 
 
